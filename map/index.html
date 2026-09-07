@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Google tag (gtag.js) -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=G-YEXBCWLWG6"
+    ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
+
+      gtag("config", "G-YEXBCWLWG6");
+    </script>
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://yissok.github.io/map-dist/favicon-32x32.png" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=1"
+    />
+<link rel="stylesheet" href="https://yissok.github.io/map-dist/leaflet.css" />
+<link rel="stylesheet" href="https://yissok.github.io/map-dist/rendered.css" />
+<script src="https://yissok.github.io/map-dist/leaflet.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+    
+		<link href="https://yissok.github.io/map-dist/_app/immutable/assets/0.Di6AIkqc.css" rel="stylesheet">
+		<link href="https://yissok.github.io/map-dist/_app/immutable/assets/wizardState.B45673CZ.css" rel="stylesheet">
+		<link href="https://yissok.github.io/map-dist/_app/immutable/assets/3.zxyNt_j0.css" rel="stylesheet">
+		<link rel="modulepreload" href="https://yissok.github.io/map-dist/_app/immutable/entry/start.CTmjE59S.js">
+		<link rel="modulepreload" href="https://yissok.github.io/map-dist/_app/immutable/chunks/entry.DbiF7TlM.js">
+		<link rel="modulepreload" href="https://yissok.github.io/map-dist/_app/immutable/chunks/utils.CKc4zGYY.js">
+		<link rel="modulepreload" href="https://yissok.github.io/map-dist/_app/immutable/chunks/index.DnrdOEtH.js">
+		<link rel="modulepreload" href="https://yissok.github.io/map-dist/_app/immutable/chunks/paths.Cf_U0DEU.js">
+		<link rel="modulepreload" href="https://yissok.github.io/map-dist/_app/immutable/entry/app.CLjrkI98.js">
+		<link rel="modulepreload" href="https://yissok.github.io/map-dist/_app/immutable/chunks/disclose-version.Bz7w70vP.js">
+		<link rel="modulepreload" href="https://yissok.github.io/map-dist/_app/immutable/chunks/index-client.DxsLb13b.js">
+		<link rel="modulepreload" href="https://yissok.github.io/map-dist/_app/immutable/chunks/svelte-component.Cu52PbcP.js">
+		<link rel="modulepreload" href="https://yissok.github.io/map-dist/_app/immutable/nodes/0.DUeq1nRg.js">
+		<link rel="modulepreload" href="https://yissok.github.io/map-dist/_app/immutable/chunks/wizardState.BHG20Lku.js">
+		<link rel="modulepreload" href="https://yissok.github.io/map-dist/_app/immutable/chunks/lifecycle.D_K5cnM_.js">
+		<link rel="modulepreload" href="https://yissok.github.io/map-dist/_app/immutable/nodes/3.Ca1XiTsp.js">
+  </head>
+
+  <body data-sveltekit-preload-data="hover">
+    <div style="display: contents"><!--[--><!--[--><!----><!----><!----><div id="map" style="border-color: hsl(0, 30%, 40%);" class="svelte-1fo2mzc"></div> <!----> <!----> <!--[--><div class="judge-box svelte-15ah3qs "><div>Waiting...</div> <!--[!--><!--]--> <button class="gps-button bot-speed-control svelte-15ah3qs">🐢🤖 <label for="speed">Bot Speed</label> <input id="speed" type="range" min="1" max="30" step="1" value="4" class="svelte-15ah3qs"></button></div><!--]--><!----> <!--[--><div class="judge-box svelte-l8s4u9 "><div>Waiting...</div> <!--[!--><!--]--></div><!--]--><!----> <button class="toggle-button svelte-1dgn5xv">👤 User 🟢 ON</button> <button class="toggle-button bot svelte-1dgn5xv">🤖 Bot 🟢 ON</button><!----> <!--[!--><!--]--> <!--[!--><!--]--><!----> <!----> <!----> <div id="map-loading-overlay" class="svelte-1fo2mzc"><img src="https://yissok.github.io/map-dist/livedot.gif" alt="loading"></div><!----> <canvas style="display: none;"></canvas><!----> <!--[!--><!--]--> <div class="saved-polylines-panel slide-out svelte-pbqm3n" role="presentation"><button class="close-button svelte-pbqm3n">x</button> Saved Paths <div class="scroll-container svelte-pbqm3n"><!--[--><!--]--></div></div><!----> <footer class="footer svelte-ykx4hs" style="background-color: hsl(0, 30%, 40%);"><span class="commit-symbol svelte-ykx4hs">-o-</span> 0000000 <div class="rhythm-overlay-container svelte-ykx4hs"><button class="rhythm-box svelte-3qmxqw"><!---->Tap the border 4 times in rhythm 🎶<!----></button><!----></div></footer><!----> <div class="overlay svelte-1g46jgn"><!--[!--><!--]--></div><!----> <!--[--><!----><div class="overlay-content"><div class="wizard-overlay svelte-1hz7dyu free" style="top: 100px;"><div class="overlay-content svelte-1hz7dyu free-content"><!----><div class="wizard-row svelte-1e4o2fy"><button class="wizard-btn svelte-1hl4940" style="background: #4caf50">New Journey</button><!----> <button class="wizard-cancel-btn svelte-1l3pmxz" style="background: crimson">Cancel</button><!----></div><!----></div></div><!----> <div class="wizard-overlay svelte-1npap0a" style="top: 50px;"><div class="overlay-content svelte-1npap0a"><!----><!--[--><div class="target-time svelte-1e4o2fy">🎯 Target time: <strong>12:27 PM</strong></div><!--]--><!----></div></div><!----></div> <!--[!--><!--]--><!----><!--]--><!----> <!--[!--><!--]--><!----><!----><!----><!--]--> <!--[!--><!--]--><!--]-->
+			
+			<script>
+				{
+					__sveltekit_1a4zbw7 = {
+						base: new URL("..", location).pathname.slice(0, -1),
+						assets: "https://yissok.github.io/map-dist"
+					};
+
+					const element = document.currentScript.parentElement;
+
+					const data = [null,null];
+
+					Promise.all([
+						import("https://yissok.github.io/map-dist/_app/immutable/entry/start.CTmjE59S.js"),
+						import("https://yissok.github.io/map-dist/_app/immutable/entry/app.CLjrkI98.js")
+					]).then(([kit, app]) => {
+						kit.start(app, element, {
+							node_ids: [0, 3],
+							data,
+							form: null,
+							error: null
+						});
+					});
+				}
+			</script>
+		</div>
+  </body>
+</html>

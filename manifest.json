@@ -1,0 +1,29 @@
+{
+  "version": 3,
+  "app": "map",
+  "global": "__sveltekit_1a4zbw7",
+  "start": "_app/immutable/entry/start.CTmjE59S.js",
+  "appEntry": "_app/immutable/entry/app.CLjrkI98.js",
+  "styles": [
+    "https://yissok.github.io/map-dist/leaflet.css",
+    "https://yissok.github.io/map-dist/rendered.css",
+    "https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+  ],
+  "scripts": [
+    "https://www.googletagmanager.com/gtag/js?id=G-YEXBCWLWG6",
+    "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js",
+    "https://yissok.github.io/map-dist/leaflet.js",
+    "https://cdn.jsdelivr.net/npm/flatpickr"
+  ],
+  "preloads": [
+    "https://yissok.github.io/map-dist/_app/immutable/entry/start.CTmjE59S.js",
+    "https://yissok.github.io/map-dist/_app/immutable/chunks/entry.DbiF7TlM.js",
+    "https://yissok.github.io/map-dist/_app/immutable/chunks/utils.CKc4zGYY.js",
+    "https://yissok.github.io/map-dist/_app/immutable/chunks/index.DnrdOEtH.js",
+    "https://yissok.github.io/map-dist/_app/immutable/chunks/paths.Cf_U0DEU.js",
+    "https://yissok.github.io/map-dist/_app/immutable/entry/app.CLjrkI98.js",
+    "https://yissok.github.io/map-dist/_app/immutable/chunks/disclose-version.Bz7w70vP.js",
+    "https://yissok.github.io/map-dist/_app/immutable/chunks/index-client.DxsLb13b.js",
+    "https://yissok.github.io/map-dist/_app/immutable/chunks/svelte-component.Cu52PbcP.js"
+  ]
+}
