@@ -1,0 +1,66 @@
+.katex-html {
+  position: absolute;
+  overflow: hidden;
+  height: 1px;
+  width: 1px;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
+.katex {
+  font-size: 12px;
+}
+
+.katex * {
+  font-family: "Courier", monospace;
+  /* font-size: inherit; */
+  writing-mode: horizontal-tb;
+  math-style: normal;
+}
+
+.katex mi {
+  text-transform: none;
+}
+mpadded {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  padding: 5px 15px;
+  margin: 0 5px;
+  text-align: center;
+}
+mpadded > mtext {
+  display: inline-block;
+  text-align: center;
+  transform: translate(-8px, 4px); /* your diagonal shift */
+}
+
+[mathvariant="bold"] {
+  font-weight: bold;
+}
+
+* {
+  user-select: none !important;
+  -webkit-user-select: none !important;
+  -webkit-touch-callout: none !important;
+  -webkit-tap-highlight-color: transparent !important;
+  touch-action: manipulation !important;
+}
+
+.custom-label {
+  font-family: "Courier", monospace;
+  background-color: lightsalmon;
+  color: black;
+  padding: 2px 6px;
+  font-size: 12px;
+  pointer-events: none;
+}
+
+.custom-label-user {
+  background-color: lightgreen;
+}
+
+.custom-label-canvas {
+  background-color: lightgreen;
+}
