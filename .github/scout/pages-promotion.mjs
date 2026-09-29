@@ -1,5 +1,5 @@
 import { scoutRepo } from './config.mjs';
-import { readFile } from 'node:fs/promises';
+import { appendFile, readFile } from 'node:fs/promises';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { pathToFileURL } from 'node:url';
@@ -53,7 +53,7 @@ export async function promotePages({ repository, sha, manifest, api, dispatch, v
 
 if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) {
   if (!process.env.GH_TOKEN || !process.env.SCOUT_REPO_PAT) throw new Error('Missing Pages promotion credentials.');
-  console.log(await promotePages({
+  const result = await promotePages({
     repository: process.env.GITHUB_REPOSITORY,
     sha: process.env.GITHUB_SHA,
     manifest: JSON.parse(await readFile('manifest.json', 'utf8')),
@@ -65,5 +65,9 @@ if (process.argv[1] && import.meta.url === pathToFileURL(process.argv[1]).href) 
       });
       process.stdout.write(stdout);
     },
-  }));
+  });
+  console.log(result);
+  if (process.env.GITHUB_OUTPUT) {
+    await appendFile(process.env.GITHUB_OUTPUT, `cleanup=${result !== 'superseded'}\n`);
+  }
 }
