@@ -1,0 +1,1 @@
+var s;const e=((s=globalThis.__sveltekit_k1jwt0)==null?void 0:s.base)??"/map-dist";var a;const t=((a=globalThis.__sveltekit_k1jwt0)==null?void 0:a.assets)??"https://yissok.github.io/map-dist/releases/4bae765902e331e4ca8b293e9ba5ab49d2201289-36787307162-1";export{t as a,e as b};
