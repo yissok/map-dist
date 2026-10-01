@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="./opencv.js"></script>
+    <title>Extract Polyline</title>
+  </head>
+  <body>
+    Polyline Extraction with OpenCV.js
+    <button id="processButton">Process Image</button>
+    <canvas id="canvas"></canvas>
+    <script>
+      const canvas = document.getElementById("canvas");
+      const ctx = canvas.getContext("2d");
+      const button = document.getElementById("processButton");
+
+      // Hardcoded image path (served locally)
+      const img = new Image();
+      img.src = "http://127.0.0.1:8080/map.PNG"; // Replace with your local server URL
+
+      button.addEventListener("click", () => {
+        img.onload = () => {
+          canvas.width = img.width;
+          canvas.height = img.height;
+          ctx.drawImage(img, 0, 0);
+
+          const src = cv.imread(canvas); // Load image into OpenCV.js
+          const dst = new cv.Mat();
+
+          // Convert to HSV and mask for blue
+          cv.cvtColor(src, src, cv.COLOR_RGBA2RGB);
+          cv.cvtColor(src, dst, cv.COLOR_RGB2HSV);
+          const lowerBlue = new cv.Mat(
+            src.rows,
+            src.cols,
+            src.type(),
+            [110, 200, 50, 0]
+          );
+          const upperBlue = new cv.Mat(
+            src.rows,
+            src.cols,
+            src.type(),
+            [140, 255, 255, 255]
+          );
+          const mask = new cv.Mat();
+          cv.inRange(dst, lowerBlue, upperBlue, mask);
+
+          // Find contours
+          const contours = new cv.MatVector();
+          const hierarchy = new cv.Mat();
+          cv.findContours(
+            mask,
+            contours,
+            hierarchy,
+            cv.RETR_EXTERNAL,
+            cv.CHAIN_APPROX_SIMPLE
+          );
+
+          // Draw the centroids as dots
+          for (let i = 0; i < contours.size(); i++) {
+            const moments = cv.moments(contours.get(i));
+            if (moments.m00 !== 0) {
+              const cx = Math.round(moments.m10 / moments.m00); // X-coordinate of the centroid
+              const cy = Math.round(moments.m01 / moments.m00); // Y-coordinate of the centroid
+              // Draw a dot (small circle) at the centroid
+              cv.circle(
+                src,
+                new cv.Point(cx, cy),
+                3,
+                new cv.Scalar(0, 255, 0, 255),
+                -1
+              ); // Red dots
+            }
+          }
+
+          cv.imshow("canvas", src);
+
+          // Clean up
+          src.delete();
+          dst.delete();
+          mask.delete();
+          contours.delete();
+          hierarchy.delete();
+        };
+
+        // Trigger the image load
+        img.dispatchEvent(new Event("load"));
+      });
+    </script>
+  </body>
+</html>
